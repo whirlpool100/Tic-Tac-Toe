@@ -3,6 +3,7 @@
 #Modules
 import random
 
+
 #Game intro for players
 def intro():
 
@@ -109,7 +110,7 @@ def play_again():
 intro()
 
 while True:
-    newBoard = [' '] * 10
+    new_board = [' '] * 10
     p1_letter, p2_letter = letter_input()
     turn = random_player_start()
     print(turn + ' will go first.')
@@ -117,19 +118,21 @@ while True:
     game_on = True
 
     while game_on:
-        if turn == 'Player 1':
-                
-            board_display(newBoard)
-            position = player_move(newBoard)
-            move_choice(newBoard, p1_letter, position)
 
-            if win_check(newBoard, p1_letter):
-                board_display(newBoard)
+        if turn == 'Player 1':
+            
+            # Player 1's turn
+            board_display(new_board)
+            position = player_move(new_board)
+            move_choice(new_board, p1_letter, position)
+
+            if win_check(new_board, p1_letter):
+                board_display(new_board)
                 print('Congratulations! Player 1 has won the game!')
                 game_on = False
             else:
-                if full_board_check(newBoard):
-                    board_display(newBoard)
+                if full_board_check(new_board):
+                    board_display(new_board)
                     print('The game has ended in a draw!')
                     break
                 else:
@@ -137,19 +140,19 @@ while True:
 
         else:
             
-            board_display(newBoard)
-            move = player_move(newBoard)
-            move_choice(newBoard, p2_letter, move)
+            board_display(new_board)
+            move = player_move(new_board)
+            move_choice(new_board, p2_letter, move)
 
-            if win_check(newBoard, p2_letter):
-                board_display(newBoard)
+            if win_check(new_board, p2_letter):
+                board_display(new_board)
                 print('Congratulations! Player 2 has won the game!')
                 game_on = False
 
             else:
-                if full_board_check(newBoard):
-                    board_display(newBoard)
-                    print('The game is a draw!')
+                if full_board_check(new_board):
+                    board_display(new_board)
+                    print('The game has ended in a draw!')
                     break
 
                 else:
