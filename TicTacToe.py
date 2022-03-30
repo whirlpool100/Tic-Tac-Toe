@@ -2,16 +2,12 @@
 
 #Modules
 import random
-import pyfiglet
-
 
 #Game intro for players
 def intro():
 
     print('================================================================================')
-    print('Welcome to'.center(80))
-    result = pyfiglet.figlet_format('Tic Tac Toe'.center(20), font='slant')
-    print(result)
+    print('Welcome to Tic Tac Toe'.center(80))
     print('--------------------------------------------------------------------------------')
     print("The rules are simple.".center(80))
     print("You need to have 3 of your markers in a row to win!".center(80))
